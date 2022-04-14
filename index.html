@@ -7,6 +7,68 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Reglas de inferencia, confusión y colisión con lenguaje natural.</h1>
+    <p>
+        
+
+El lenguaje “natural” hay veces es un poco enredoso y cae en contradicciones o ambigüedades y por eso en  matemáticas – lógica  se desarrolla un lenguaje propio con  símbolos, relaciones, y reglas.
+Cuando revisamos la base de la lógica nos encontramos con las famosas reglas de inferencia lógica, las cuales son como una clase de formulas con detonaciones de proposiciones y sus relaciones. Hay veces, para entender esto es mejor desligarse por completo del sentido del lenguaje natural, aunque es bien sabido que el aprendizaje se genera por relaciones conocimiento anterior con conocimiento nuevo. Sin embargo genera confusiones y colisiones.
+
+
+Para entender la inferencia lógica, primero definiremos el “razonamiento correcto”, el razonamiento correcto los asociaremos  con la implicancia lógica. La implicancia lógica es la condicional cuando es una tautología. Entonces nos quiere decir que dado dos proposiciones nunca se va a encontrar el caso de  que el antecedente sea verdad y el consecuente sea falso. En otras palabras, nunca se encontrará el caso de que una premisa sea verdadera y la conclusión sea falsa. Todos los demás casos son admisibles, incluso si la las premisas son falsas . Si encontramos el caso de falsedad entonces decimos que el razonamiento es incorrecto.  
+
+Juguemos un poco :
+Dado las siguientes proposiciones
+p : hoy llueve
+p→p : Si hoy llueve, entonces hoy llueve.
+
+p→p Esto  parece algo obvio, pero evaluemos la condicional, y nos fijamos que siempre es verdadera y que por lo tanto es una tautologia y podríamos llamarle razonamiento correcto. 
+
+Ahora aumentemos mas premisas, razonemos  de manera obvia  y evaluemos si es correcto
+
+p: hoy llueve
+q : hace frio
+
+Hago  una proposición compuesta
+
+p ^ q : hoy llueve y hace frio
+
+‘infiero algo’ 
+ 
+p ^ q →q : Si hoy llueve y hace frio, entonces hace frio.
+
+También parece obvio, pero evaluemos si cumple con ser una IMPLICANCIA. Si hacemos una tabla de verdad es una tautologia y estamos ‘deduciendo’ algo correcto, esto no es propiamente una inferencia por que es algo obvio. Ya que si es verdad que si hoy lluevo y hace frio, entonces hace frio. Para ser llamado inferencia lógica, ademas de tener un razonamiento correcto IMPLICANCIA,  y ademas la proposición como conclusión ‘debe ser no obvia’, aunque la palabra es un poco ambigua. Por ejemplo el famoso Modus Ponens que dice así
+
+(p →q) : Si llueve, entonces hoy hace frio
+ 
+((p →q) ^  p)→q : si llueve, entonces hace frio y  llueve. Entonces concluimos que hace frio 
+
+Toda la proposición compuesta  que esta detrás de la ultimo operador condicional son premisas y están relacionadas por el operador de la conjunción. Es así que  p →q vendría a ser una premisa  y p  seria otra premisa.  Evaluamos la proposición compuesta y es una tautologia. Ojo, cuando decirmos “y llueve” no se refiere que estamos afirmando que es verdad que llueve, llueva o no, dada la primera premisa, toda la proposición compuesta siempre sera verdadera . Incluso si asumimos que llueve es falso, toda la implicancia sera verdadera.
+
+Al parecer el Modus Ponens tambien parece algo obvio, aunque ya es llamado inferencia logica
+Que tal si hacemos una variante 
+
+((p →q) ^  p)→p : si llueve, entonces hace frio y  llueve. Entonces llueve
+
+También es una implicancia y por la tanto decimos que el razonamiento es correcto. Pero parece algo obvio en sentido de lenguaje natural
+
+Otra variante 
+
+((p →q) ^  q)→p : si llueve, entonces hace frio y  hace frio. Entonces llueve. RAZONAMIENTO INCORRECTO
+
+Evaluamos y vemos que no es una tautologia. Existe un caso donde la premisa es verdadero y la conclusión falsa. Cuando p es falso y q es verdadero(hacer tabla). Por lo tanto esta no puede ser una regla de inferencia y  sera un razonamiento incorrecto.
+Analizando la primera condicional y afirmando que es verdad que hace frio, podemos concluir que el operador de la condicional  nos indica que la premisa es una condición suficiente mas no necesaria. Si hace frio no necesariamente es por la lluvia , así que no se puede afirmar dicha sentencia.
+
+Veamos el Modus tollens
+
+((p →q) ^  ~q)→~p : si llueve, entonces hace frio  y no hace frio. Entonces no llueve.  
+
+Evaluamos y también vemos que es una implicancia. Esto parece algo raro ya que dijimos que si hace frio no necesariamente es por la lluvia, y podríamos decir que si no hace frio tampoco necesariamente es por la lluvia. Como así podemos afirmar que no llueve ? . Sí,  podemos hacerlo. Para que esta proposición compuesta sea una tautologia y se niega que hace frio, la única alternativa para que sea una tautologia es que el antecedente “que llueve” también debe ser falso.
+
+En  suma, para evaluar que cierta regla es un razonamiento correcto debemos someterlo a un condicional, el cual debe ser una tautologia. Al ser una tautologia, la conclusion puede ser verdadera o falsa. En el caso que la conclusión sea falsa (razonamiento incorrecto) entonces hemos encontrado que las premisas, alguna de ellas es verdadera y su conclusión es falsa. En el caso de ser verdadera toda la IMPLICANCIA el valor de verdad de las proposiciones pueden ser muchos. 
+Entonces nos preguntamos como podríamos construir una regla de inferencia. Dada unas premisas verdaderas y si al poner como conclusión cierta proposicion tendriamos que evaluar todos los casos posibles. Si existe una premisa falsa, automáticamente la condicional es una tautologia, sin importar la conclusión. O sea que no sabremos si la conclusión es falsa o verdadera. En este caso el razonamiento puede ser correcto, sin embargo con alguna  premisa falsa no se puede conocer con certeza el valor de verdad de la conclusión. Podemos restringirlos solo a premisas verdaderas y concluir algo con el mismo valor de las premisas con el cuidado de que sea un razonamiento correcto (tautologia de la condicional).
+Para evaluar rapidamente un razonamiento podemos irnos al único caso de falsedad de la implicancia que es cuando el antecedente es verdadero y el consecuente es falso y si es posible encontrar dicho caso(sin contradicciones) , entonces concluimos que no es una tautologia y no es un razonamiento correcto. 
+    </p>
     <p>Encuentra el Leopardo en 5 segundos</p>
     <img style ="width: 20%;" src="imagen.jpeg">
 </body>
